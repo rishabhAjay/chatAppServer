@@ -1,8 +1,9 @@
-const PORT = process.env.PORT || 5000
-
+const PORT = process.env.PORT || 5000;
+import dotenv from "dotenv";
+dotenv.config();
 const io = require("socket.io")(PORT, {
   cors: {
-    origin: "client_URL",
+    origin: process.env.CLIENT_URL,
   },
 });
 let users = [];
